@@ -5,7 +5,7 @@ import ErrorBoundary from '@/components/ErrorBoundary'
 import GlobalCrash from '@/components/ErrorBoundary/GlobalCrash'
 
 import '@/styles/index.css'
-import App from '@/app'
+import App from '@/App'
 
 const root = createRoot(document.getElementById('root')!, {
   // 捕获 ErrorBoundary 内部的错误

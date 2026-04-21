@@ -94,9 +94,21 @@ export default defineConfig((config) => {
       chunkSizeWarningLimit: 500,
       // 设置小于 次kb 的资源将内联为base64
       assetsInlineLimit: 10,
+
       rolldownOptions: {
         output: {
           minify,
+          chunkFileNames: 'js/[name]-[hash].js',
+          entryFileNames: 'js/[name]-[hash].js',
+          assetFileNames: (info) => {
+            const name = info.names?.[0] ?? info.originalFileNames?.[0] ?? ''
+            const ext = name.split('.').pop() ?? ''
+            if (/^(gif|jpe?g|png|svg)$/.test(ext))
+              return 'assets/[name]-[hash][extname]'
+            if (ext === 'css') return 'css/[name]-[hash][extname]'
+            if (ext === 'ttf') return 'font/[name]-[hash][extname]'
+            return 'assets/[name]-[hash][extname]'
+          },
         },
       },
       sourcemap: VITE_BUILD_SOURCEMAP,
