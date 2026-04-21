@@ -1,0 +1,42 @@
+{
+  "name": "@xt/dev-config",
+  "version": "1.0.0",
+  "private": "true",
+  "type": "module",
+  "exports": {
+    "./eslint/base": {
+      "import": "./eslint/base.js",
+      "types": "./eslint/index.d.ts"
+    },
+    "./eslint/react": {
+      "import": "./eslint/react.js",
+      "types": "./eslint/index.d.ts"
+    },
+    "./prettier": {
+      "import": "./prettier/index.js",
+      "types": "./prettier/index.d.ts"
+    },
+    "./prettier/tailwind": {
+      "import": "./prettier/prettier-tailwind.js",
+      "types": "./prettier/index.d.ts"
+    },
+    "./stylelint": {
+      "import": "./stylelint/index.js",
+      "types": "./stylelint/index.d.ts"
+    }
+  },
+  "peerDependencies": {
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "stylelint": "catalog:"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-tailwindcss": "^3.18.3",
+    "globals": "^17.5.0",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "typescript-eslint": "^8.58.2"
+  }
+}

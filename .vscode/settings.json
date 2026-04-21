@@ -1,0 +1,31 @@
+{
+  "files.eol": "\n",
+
+  // #每次保存的时候代码格式化
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit",
+    "source.fixAll.prettier": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml"
+  ],
+  "stylelint.validate": ["css", "postcss", "scss", "vue"],
+
+  //防止VSCode启动带有node_modules的项目的时候很卡的问题
+  "search.followSymlinks": false,
+  // 窗口失去焦点时，自动保存文件
+  "files.autoSave": "onWindowChange",
+  "cSpell.words": ["callees", "commitlintrc", "esbenp"]
+}

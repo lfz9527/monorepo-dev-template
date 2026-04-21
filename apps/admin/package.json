@@ -1,0 +1,31 @@
+{
+  "name": "admin",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@xt/hooks": "workspace:^",
+    "@xt/utils": "workspace:*",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@xt/dev-config": "workspace:*",
+    "@xt/types": "workspace:*",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "stylelint": "catalog:",
+    "typescript": "catalog:",
+    "vite": "^8.0.9",
+    "vite-plugin-stylelint": "^6.1.0"
+  }
+}

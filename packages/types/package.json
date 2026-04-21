@@ -1,0 +1,13 @@
+{
+  "name": "@xt/types",
+  "type": "module",
+  "version": "0.0.0",
+  "exports": {
+    ".": "./index.ts",
+    "./global": "./global.d.ts"
+  },
+  "types": "./index.ts",
+  "peerDependencies": {
+    "react": "catalog:"
+  }
+}

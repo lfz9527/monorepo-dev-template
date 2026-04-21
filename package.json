@@ -1,0 +1,65 @@
+{
+  "name": "monorepo-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:admin": "pnpm --filter web-admin dev",
+    "build": "turbo run build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "check-types": "tsc --noEmit",
+    "pre-install:g": "tsx scripts/install-global.ts",
+    "clean": "rimraf --glob \"apps/*/node_modules\" \"packages/*/node_modules\" node_modules",
+    "commit": "git add . && git-cz",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable",
+      "config": {
+        "path": "./.cz-config.cjs"
+      }
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.cjs"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,less,md,html,json}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@xt/dev-config": "workspace:^",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-config-tailwindcss": "^1.0.1",
+    "tsx": "^4.21.0",
+    "turbo": "^2.9.6",
+    "typescript": "catalog:",
+    "@commitlint/cli": "^20.5.0",
+    "commitizen": "^4.3.1",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-customizable": "^7.5.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0"
+  }
+}
