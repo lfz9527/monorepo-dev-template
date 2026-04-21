@@ -30,18 +30,26 @@ const root = createRoot(document.getElementById('root')!, {
   identifierPrefix: 'xt',
 })
 
-root.render(
-  <StrictMode>
-    {/* 负责渲染层的错误 → 展示 fallback，用户可点击重试 */}
-    <ErrorBoundary
-      fallback={({ error, reset }) => (
-        <GlobalCrash
-          error={error}
-          reset={reset}
-        />
-      )}
-    >
-      <App />
-    </ErrorBoundary>
-  </StrictMode>
-)
+function Main() {
+  return (
+    <StrictMode>
+      {/* 负责渲染层的错误 → 展示 fallback，用户可点击重试 */}
+      <ErrorBoundary
+        fallback={({ error, reset }) => (
+          <GlobalCrash
+            error={error}
+            reset={reset}
+          />
+        )}
+      >
+        <App />
+      </ErrorBoundary>
+    </StrictMode>
+  )
+}
+
+function setup() {
+  root.render(<Main />)
+}
+
+setup()
