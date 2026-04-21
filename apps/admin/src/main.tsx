@@ -1,10 +1,47 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
 
-createRoot(document.getElementById('root')!).render(
+import ErrorBoundary from '@/components/ErrorBoundary'
+import GlobalCrash from '@/components/ErrorBoundary/GlobalCrash'
+
+import '@/styles/index.css'
+import App from '@/app'
+
+const root = createRoot(document.getElementById('root')!, {
+  // 捕获 ErrorBoundary 内部的错误
+  onCaughtError: (error, errorInfo) => {
+    console.group('[onCaughtError]')
+    console.error('error:', error)
+    console.error('componentStack:', errorInfo.componentStack)
+    console.groupEnd()
+  },
+  // 捕获未捕获的错误（全局错误）
+  onUncaughtError: (error, errorInfo) => {
+    console.group('[onUncaughtError]')
+    console.error('error:', error)
+    console.error('componentStack:', errorInfo.componentStack)
+    console.groupEnd()
+  },
+  // 捕获可恢复的错误（不会崩溃）
+  onRecoverableError: (error) => {
+    console.warn('recoverable error', error)
+  },
+  // 用于生成唯一 ID 前缀
+  identifierPrefix: 'xt',
+})
+
+root.render(
   <StrictMode>
-    <App />
+    {/* 负责渲染层的错误 → 展示 fallback，用户可点击重试 */}
+    <ErrorBoundary
+      fallback={({ error, reset }) => (
+        <GlobalCrash
+          error={error}
+          reset={reset}
+        />
+      )}
+    >
+      <App />
+    </ErrorBoundary>
   </StrictMode>
 )

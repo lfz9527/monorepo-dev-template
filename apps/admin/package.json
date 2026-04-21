@@ -12,7 +12,9 @@
     "@xt/hooks": "workspace:^",
     "@xt/utils": "workspace:*",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "react-router": "^7.14.1",
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
     "@types/node": "^24.12.2",
@@ -26,6 +28,12 @@
     "stylelint": "catalog:",
     "typescript": "catalog:",
     "vite": "^8.0.9",
-    "vite-plugin-stylelint": "^6.1.0"
+    "vite-plugin-stylelint": "^6.1.0",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "rollup-plugin-visualizer": "^7.0.1",
+    "unplugin-icons": "^23.0.1",
+    "vite-plugin-compression2": "^2.5.3",
+    "vite-plugin-env-parse": "^1.0.15"
   }
 }
