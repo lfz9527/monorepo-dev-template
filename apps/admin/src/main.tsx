@@ -5,6 +5,7 @@ import ErrorBoundary from '@/components/ErrorBoundary'
 import GlobalCrash from '@/components/ErrorBoundary/GlobalCrash'
 
 import '@/styles/index.css'
+import '@xt/ui/src/styles/tailwind.css'
 import App from '@/App'
 
 const root = createRoot(document.getElementById('root')!, {

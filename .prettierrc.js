@@ -1,5 +1,5 @@
-import basePrettier from '@xt/dev-config/prettier'
+import tailwindPrettier from '@xt/dev-config/prettier/tailwind'
 
 export default {
-  ...basePrettier,
+  ...tailwindPrettier,
 }

@@ -8,6 +8,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import stylelint from 'vite-plugin-stylelint'
 import Icons from 'unplugin-icons/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
+import tailwindcss from '@tailwindcss/vite'
 
 import { type ImportMetaEnv } from '@/types/env'
 import proxy from './vite.proxy'
@@ -40,7 +41,7 @@ export default defineConfig((config) => {
     },
     plugins: [
       react(),
-
+      tailwindcss(),
       Icons({
         compiler: 'jsx',
         jsx: 'react',

@@ -1,17 +1,19 @@
 {
   "name": "@xt/utils",
   "version": "1.0.0",
+  "type": "module",
   "export": {
     ".": "./index.ts",
     "./common": "./common.ts",
     "./easy-uid": "./easy-uid.ts"
   },
-  "type": "index.ts",
+  "types": "index.ts",
   "dependencies": {
     "clsx": "^2.1.1"
   },
   "devDependencies": {
     "@xt/types": "workspace:^",
+    "tailwind-merge": "^3.5.0",
     "typescript": "catalog:"
   }
 }

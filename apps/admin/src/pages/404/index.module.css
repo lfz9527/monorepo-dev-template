@@ -46,26 +46,26 @@
 
 /* ─── Layout ─────────────────────────────────────────────── */
 .container {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
   animation: fadeup 0.5s ease both;
   background-color: var(--color-bg, #fff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
 /* ─── Art / number row ───────────────────────────────────── */
 .artWrap {
-  margin-bottom: 2rem;
   animation: float 3.6s ease-in-out infinite;
+  margin-bottom: 2rem;
 }
 
 .numRow {
-  display: flex;
   align-items: center;
+  display: flex;
   line-height: 1;
 }
 
@@ -79,25 +79,23 @@
 
 /* ─── CRT screen (the zero) ──────────────────────────────── */
 .screen {
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  width: clamp(72px, 13vw, 128px);
-  height: clamp(72px, 13vw, 128px);
-  flex-direction: column;
-  flex-shrink: 0;
   align-items: center;
-  justify-content: center;
+  background: #0d0d14;
   border: 3px solid #534ab7;
   border-radius: 14px;
-  background: #0d0d14;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
   gap: 8px;
+  height: clamp(72px, 13vw, 128px);
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: clamp(72px, 13vw, 128px);
 }
 
 /* horizontal scanline sweep */
 .scanline {
-  position: absolute;
-  height: 28%;
   animation: scanline 2.6s linear infinite;
   background: linear-gradient(
     to bottom,
@@ -105,13 +103,14 @@
     rgb(127 119 221 / 6%),
     transparent
   );
+  height: 28%;
   inset: 0;
   pointer-events: none;
+  position: absolute;
 }
 
 /* pixel grid overlay */
 .screen::after {
-  position: absolute;
   background-image: repeating-linear-gradient(
     0deg,
     rgb(0 0 0 / 12%) 0,
@@ -122,21 +121,22 @@
   content: '';
   inset: 0;
   pointer-events: none;
+  position: absolute;
 }
 
 .eyeRow {
-  position: relative;
-  z-index: 1;
   display: flex;
   gap: clamp(10px, 2vw, 20px);
+  position: relative;
+  z-index: 1;
 }
 
 .eye {
-  width: clamp(9px, 1.6vw, 14px);
-  height: clamp(9px, 1.6vw, 14px);
-  border-radius: 50%;
   animation: blink 4s ease-in-out infinite;
   background: #afa9ec;
+  border-radius: 50%;
+  height: clamp(9px, 1.6vw, 14px);
+  width: clamp(9px, 1.6vw, 14px);
 }
 
 .eye:last-child {
@@ -144,73 +144,73 @@
 }
 
 .mouth {
-  position: relative;
-  z-index: 1;
-  width: clamp(20px, 3.5vw, 32px);
-  height: clamp(9px, 1.5vw, 14px);
-  border-radius: 0 0 999px 999px;
-  border-right: 2px solid transparent;
   border-bottom: 3px solid #afa9ec;
   border-left: 2px solid transparent;
+  border-radius: 0 0 999px 999px;
+  border-right: 2px solid transparent;
+  height: clamp(9px, 1.5vw, 14px);
+  position: relative;
+  width: clamp(20px, 3.5vw, 32px);
+  z-index: 1;
 }
 
 /* ─── Path badge ─────────────────────────────────────────── */
 .badge {
-  display: inline-flex;
   align-items: center;
-  padding: 3px 12px;
+  background: #f3f4f6;
   border: 1px solid #e5e7eb;
   border-radius: 999px;
-  margin-bottom: 1rem;
-  background: #f3f4f6;
   color: #6b7280;
+  display: inline-flex;
   font-family: ui-monospace, 'Cascadia Code', Menlo, monospace;
   font-size: 12px;
   gap: 6px;
+  margin-bottom: 1rem;
+  padding: 3px 12px;
   word-break: break-all;
 }
 
 .badgeDot {
-  width: 6px;
-  height: 6px;
-  flex-shrink: 0;
-  border-radius: 50%;
   background: #e24b4a;
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: 6px;
+  width: 6px;
 }
 
 /* ─── Text ───────────────────────────────────────────────── */
 .headline {
-  margin: 0 0 0.5rem;
   color: var(--color-text-primary, #111);
   font-size: clamp(1.25rem, 3vw, 1.6rem);
   font-weight: 600;
+  margin: 0 0 0.5rem;
 }
 
 .sub {
-  max-width: 360px;
-  margin: 0 0 2rem;
   color: var(--color-text-secondary, #6b7280);
   font-size: 14px;
   line-height: 1.75;
+  margin: 0 0 2rem;
+  max-width: 360px;
 }
 
 /* ─── Buttons ────────────────────────────────────────────── */
 .btnGroup {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
+  justify-content: center;
 }
 
 .btnPrimary {
-  padding: 9px 22px;
+  background: #111;
   border: none;
   border-radius: 8px;
-  background: #111;
   color: #fff;
   cursor: pointer;
   font-size: 13px;
   font-weight: 500;
+  padding: 9px 22px;
   transition: opacity 0.15s;
 }
 
@@ -223,13 +223,13 @@
 }
 
 .btnGhost {
-  padding: 9px 22px;
+  background: transparent;
   border: 1px solid #d1d5db;
   border-radius: 8px;
-  background: transparent;
   color: #111;
   cursor: pointer;
   font-size: 13px;
+  padding: 9px 22px;
   transition: background 0.15s;
 }
 
@@ -260,8 +260,8 @@
   }
 
   .badge {
-    border-color: #2e2e3a;
     background: #1c1c22;
+    border-color: #2e2e3a;
     color: #9ca3af;
   }
 
