@@ -8,11 +8,10 @@ export default [
   ...baseConfig,
   {
     files: ['**/*.{ts,tsx}'],
-    extends: [
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
+    plugins: {
       tailwindcss,
-    ],
+    },
+    extends: [reactHooks.configs.flat.recommended, reactRefresh.configs.vite],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -26,6 +25,7 @@ export default [
     settings: {
       tailwindcss: {
         callees: ['cn', 'cva'],
+        config: null,
       },
     },
   },

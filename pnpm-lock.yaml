@@ -9,6 +9,15 @@ catalogs:
     eslint:
       specifier: ^9.39.4
       version: 9.39.4
+    prettier:
+      specifier: ^3.8.3
+      version: 3.8.3
+    react:
+      specifier: ^19
+      version: 19.2.5
+    react-dom:
+      specifier: ^19.2.5
+      version: 19.2.5
     stylelint:
       specifier: ^17.8.0
       version: 17.8.0
@@ -132,6 +141,9 @@ importers:
       stylelint:
         specifier: 'catalog:'
         version: 17.8.0(typescript@6.0.3)
+      tailwindcss:
+        specifier: ^4.2.4
+        version: 4.2.4
       typescript:
         specifier: 'catalog:'
         version: 6.0.3

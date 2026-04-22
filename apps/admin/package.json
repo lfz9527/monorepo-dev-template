@@ -32,6 +32,7 @@
     "eslint": "catalog:",
     "rollup-plugin-visualizer": "^7.0.1",
     "stylelint": "catalog:",
+    "tailwindcss": "^4.2.4",
     "typescript": "catalog:",
     "unplugin-icons": "^23.0.1",
     "vite": "^8.0.9",
