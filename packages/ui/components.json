@@ -12,9 +12,8 @@
   "iconLibrary": "lucide",
   "aliases": {
     "components": "@xt/ui/components",
-    "utils": "@xt/ui/lib/utils",
-    "hooks": "@xt/ui/hooks",
-    "lib": "@xt/ui/lib",
+    "utils": "@xt/utils",
+    "hooks": "@xt/hooks",
     "ui": "@xt/ui/components"
   },
   "rtl": false,

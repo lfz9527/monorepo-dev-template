@@ -1,11 +1,8 @@
+@import '@xt/ui/src/styles/tailwind.css';
+
 body,
 html,
 #root {
   height: 100%;
   width: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
 }

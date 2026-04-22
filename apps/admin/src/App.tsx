@@ -1,6 +1,12 @@
 import router from '@/router'
 import { RouterProvider } from 'react-router'
+import { ThemeProvider } from '@xt/ui'
+
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  )
 }
 export default App
