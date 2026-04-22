@@ -9,7 +9,14 @@ export default function Home() {
 
       <div className='flex-center'>
         <div className='w-100'>
-          <Card />
+          <Card
+            title='Card Title'
+            description='Card Description'
+            action={'Card Action'}
+            footer={<p>Card Footer</p>}
+          >
+            <p>Card Content</p>
+          </Card>
         </div>
       </div>
     </>
