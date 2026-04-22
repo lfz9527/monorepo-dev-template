@@ -276,6 +276,9 @@ importers:
       '@xt/dev-config':
         specifier: workspace:*
         version: link:../dev-config
+      '@xt/types':
+        specifier: workspace:*
+        version: link:../types
       eslint:
         specifier: 'catalog:'
         version: 9.39.4(jiti@2.6.1)

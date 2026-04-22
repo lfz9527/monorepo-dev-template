@@ -14,4 +14,10 @@ declare global {
   type NotArgReturnFunc<R = any> = () => R
 
   type OneArgVoidFunction<T = string> = (arg: T) => void
+
+  type GetProps<T> = T extends (props: infer P) => any
+    ? P
+    : T extends React.ComponentType<infer P>
+      ? P
+      : never
 }

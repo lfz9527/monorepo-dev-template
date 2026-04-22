@@ -154,3 +154,9 @@
     opacity: 0.8;
   }
 }
+
+@utility flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

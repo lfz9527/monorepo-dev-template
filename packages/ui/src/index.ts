@@ -1,2 +1,4 @@
 export * from './components/Button'
 export * from './components/ThemeProvider'
+export * from './components/Card'
+export * from './components/Separator'
