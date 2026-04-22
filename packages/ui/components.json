@@ -11,9 +11,9 @@
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@xt/ui/components",
+    "components": "../",
     "utils": "@xt/utils",
-    "lib": "@xt/utils",
+    "lib": "@xt",
     "hooks": "@xt/hooks",
     "ui": "@xt/ui/components"
   },

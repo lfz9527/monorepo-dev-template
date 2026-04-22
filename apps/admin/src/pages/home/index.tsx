@@ -1,4 +1,11 @@
-import { Button, Card } from '@xt/ui'
+import {
+  Button,
+  Card,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+  InputGroupText,
+} from '@xt/ui'
 
 export default function Home() {
   return (
@@ -15,7 +22,15 @@ export default function Home() {
             action={'Card Action'}
             footer={<p>Card Footer</p>}
           >
-            <p>Card Content</p>
+            <InputGroup className='h-auto'>
+              <InputGroupAddon align='block-start'>
+                <InputGroupText>Full Name</InputGroupText>
+              </InputGroupAddon>
+              <InputGroupInput
+                id='block-start-input'
+                placeholder='Enter your name'
+              />
+            </InputGroup>
           </Card>
         </div>
       </div>
