@@ -19,16 +19,11 @@
     "./prettier/tailwind": {
       "import": "./prettier/prettier-tailwind.js",
       "types": "./prettier/index.d.ts"
-    },
-    "./stylelint": {
-      "import": "./stylelint/index.js",
-      "types": "./stylelint/index.d.ts"
     }
   },
   "peerDependencies": {
     "eslint": "catalog:",
-    "prettier": "catalog:",
-    "stylelint": "catalog:"
+    "prettier": "catalog:"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",

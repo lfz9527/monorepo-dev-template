@@ -65,7 +65,7 @@ export default defineConfig((config) => {
 
       stylelint({
         fix: true, // 开启自动修复
-        include: ['**/*.{css,scss,less}'], // 仅检查样式文件
+        include: ['src/**/*.{css,scss,less}'],
         cache: false, // 开发时关闭缓存
       }),
 

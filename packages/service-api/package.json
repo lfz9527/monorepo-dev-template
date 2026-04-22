@@ -1,0 +1,17 @@
+{
+  "name": "@xt/service-api",
+  "version": "1.0.0",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.d.ts"
+    },
+    "./request": {
+      "import": "./request/index.ts",
+      "types": "./request/index.ts"
+    }
+  },
+  "dependencies": {
+    "@xt/utils": "workspace:*"
+  }
+}

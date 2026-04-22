@@ -4,7 +4,8 @@
   "main": "index.ts",
   "types": "index.ts",
   "peerDependencies": {
-    "react": "catalog:"
+    "react": "catalog:",
+    "@xt/service-api": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^24.12.2",
