@@ -7,35 +7,43 @@ import {
   useState,
 } from 'react'
 
-type Theme = 'dark' | 'light' | 'system'
-type ResolvedTheme = 'dark' | 'light'
+export const THEME_VALUES: Theme[] = ['dark', 'light', 'system']
 
-type ThemeProviderProps = {
+type Theme = 'dark' | 'light' | 'system'
+type ThemeValues = 'dark' | 'light'
+
+type Props = {
   children: React.ReactNode
+  // 默认主题
   defaultTheme?: Theme
-  storageKey?: string
+  // 是否在主题切换时禁用动画过渡效果
   disableTransitionOnChange?: boolean
 }
 
-type ThemeProviderState = {
+type State = {
   theme: Theme
+}
+
+type Action = {
   setTheme: (theme: Theme) => void
 }
 
+// 深色模式 媒体查询字符串
 const COLOR_SCHEME_QUERY = '(prefers-color-scheme: dark)'
-// const THEME_VALUES: Theme[] = ['dark', 'light', 'system']
 
-const ThemeProviderContext = createContext<ThemeProviderState | undefined>(
+const ThemeProviderContext = createContext<State | Action | undefined>(
   undefined
 )
 
-function getSystemTheme(): ResolvedTheme {
+// 获取系统主题
+function getSystemTheme(): ThemeValues {
   if (window.matchMedia(COLOR_SCHEME_QUERY).matches) {
     return 'dark'
   }
   return 'light'
 }
 
+// 全局关闭所有 CSS 过渡动画，然后再安全地恢复
 function disableTransitionsTemporarily() {
   const style = document.createElement('style')
   style.appendChild(
@@ -55,31 +63,12 @@ function disableTransitionsTemporarily() {
   }
 }
 
-// function isEditableTarget(target: EventTarget | null) {
-//   if (!(target instanceof HTMLElement)) {
-//     return false
-//   }
-
-//   if (target.isContentEditable) {
-//     return true
-//   }
-
-//   const editableParent = target.closest(
-//     "input, textarea, select, [contenteditable='true']"
-//   )
-//   if (editableParent) {
-//     return true
-//   }
-
-//   return false
-// }
-
 export function ThemeProvider({
   children,
   defaultTheme = 'system',
   disableTransitionOnChange = true,
   ...props
-}: ThemeProviderProps) {
+}: Props) {
   const [theme, setThemeState] = useState<Theme>(() => {
     return defaultTheme
   })
@@ -91,17 +80,15 @@ export function ThemeProvider({
   const applyTheme = useCallback(
     (nextTheme: Theme) => {
       const root = document.documentElement
-      const resolvedTheme =
-        nextTheme === 'system' ? getSystemTheme() : nextTheme
-      const restoreTransitions = disableTransitionOnChange
+      const resTheme = nextTheme === 'system' ? getSystemTheme() : nextTheme
+      const resTransitions = disableTransitionOnChange
         ? disableTransitionsTemporarily()
         : null
-
       root.classList.remove('light', 'dark')
-      root.classList.add(resolvedTheme)
+      root.classList.add(resTheme)
 
-      if (restoreTransitions) {
-        restoreTransitions()
+      if (resTransitions) {
+        resTransitions()
       }
     },
     [disableTransitionOnChange]
